@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Currency Swap Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Currency Swap application built with React, TypeScript, Tailwind CSS, and React Select. The application allows users to swap between different currencies using the latest exchange rates fetched from a remote API.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Swap between various currencies using real-time exchange rates
+- Dynamic dropdowns with currency icons
+- Input validation to ensure proper data entry
+- Responsive design using Tailwind CSS
+- Clean and user-friendly interface
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   git clone https://github.com/TekMickey/ThanhTaiTran.git
+   cd ./ThanhTaiTran/src/problem2/currency-swap/
 
-### `npm test`
+2. Install dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   npm install
 
-### `npm run build`
+3. Start the development server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This will run the app in development mode. Open http://localhost:3000 to view it in the browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Dependencies
 
-### `npm run eject`
+    React
+    TypeScript
+    Tailwind CSS
+    React Select
+    Axios
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    src/
+    components/
+        FormField.tsx
+        SwapForm.tsx
+    hooks/
+        useTokenData.ts
+    styles/
+        index.css
+    App.tsx
+    index.tsx
+    App.css
+    tailwind.config.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Components
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- FormField.tsx: A reusable form field component that handles both text input and select input with currency icons.
+- SwapForm.tsx: The main component that handles the logic and UI for the currency swap form.
 
-## Learn More
+## Hooks
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- useTokenData.ts: Custom hook for fetching and managing token price data from a remote API.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Styles
 
-### Code Splitting
+- index.css: Contains Tailwind CSS imports and custom styles.
+- ReactSelect.css: Custom styles for React Select components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+1. Select the currencies you want to swap from the dropdown menus.
+2. Enter the amount you want to swap.
+3. Click the "Swap" button to see the conversion result.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Customization
 
-### Making a Progressive Web App
+- To add more currencies or change the API endpoint, update the useTokenData.ts hook.
+- To customize the styles, update the corresponding CSS files or Tailwind classes in the components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Troubleshooting
 
-### Advanced Configuration
+If you encounter any issues related to dependency conflicts, you can try removing the node_modules directory and package-lock.json file, and then reinstalling the dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Remove-Item -Recurse -Force node_modules
+    Remove-Item package-lock.json
+    npm install --legacy-peer-deps
